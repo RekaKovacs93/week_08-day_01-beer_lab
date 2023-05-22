@@ -31,7 +31,7 @@ const BeerContainer = ()=>{
             const newFav = [...favourites, selectedBeer]
             setFavourites(newFav)
             console.log(newFav)
-            // setSelectedBeer(null)
+            setSelectedBeer(null)
     }
 
     useEffect(()=>{
@@ -48,7 +48,9 @@ const BeerContainer = ()=>{
                 throw new Error("Failed to fetch beers")
             }
         })
-        .then((beers)=> {setBeers(beers)
+        .then((beers)=> {
+            setSelectedBeer(beers[0])
+            setBeers(beers)
         })
     }
     return (

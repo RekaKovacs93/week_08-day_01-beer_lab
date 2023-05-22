@@ -5,6 +5,7 @@ import FavouriteBeerItem from "./FavouriteBeerItem";
 
 const FavouriteList = ({beers, handleChange, handleSubmit, favourites, deleteItem})=>{
 
+
     const beerNames = beers.map((beer)=>{
         return (
             <ListNames
@@ -33,7 +34,8 @@ const FavouriteList = ({beers, handleChange, handleSubmit, favourites, deleteIte
                 {favBeers}
             </div>
             <form onSubmit={handleSubmit}>
-                <select onChange={handleChange}>{beerNames}</select>
+                <select onChange={handleChange}>
+                <option value="default" defaultValue={"default"}  disabled selected hidden>Select Favourite</option>{beerNames}</select>
                 <input type="submit" value = "Add" onClick={handleSubmit}></input>
             </form>
         </div>
